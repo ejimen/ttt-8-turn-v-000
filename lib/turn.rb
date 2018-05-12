@@ -18,7 +18,7 @@ def input_to_index(user_input)
   return index
 end
 
-#checks the number to see if 1) the position is already taken and 2)it is an actual number
+
 def valid_move?(board, index)
   def position_taken?(array, ind)
     if array[ind] == " " || array[ind] == "" || array[ind] == nil
@@ -28,6 +28,7 @@ def valid_move?(board, index)
     end
   end
 
+
   def on_board?(num)
     if num.between?(0, 8) == true
       return true
@@ -36,6 +37,7 @@ def valid_move?(board, index)
     end
   end
 
+
   if (position_taken?(board, index)) == false && (on_board?(index) == true)
     return true
   else
@@ -43,13 +45,13 @@ def valid_move?(board, index)
   end
 end
 
-#Takes a users num and the board, and places the X or O char in that position
+
 def move(board, index, character = "X")
   board[index] = character
   return board
 end
 
-#Asks user for a number, check if it is valid, and if it's not, recursively continues to ask for a number
+
 def turn (board)
   puts "Please enter 1-9:"
   num = gets.chomp
